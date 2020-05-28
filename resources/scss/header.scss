@@ -14,7 +14,7 @@ $headerHeight: 52px;
 
   &__container {
     position: relative;
-    height: 52px;
+    height: $headerHeight;
     display: flex;
   }
 
