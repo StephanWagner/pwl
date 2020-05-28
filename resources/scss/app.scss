@@ -11,6 +11,8 @@ body {
   background: #ddd;
 }
 
+// Containers
+
 .container {
   position: relative;
   max-width: 960px;
@@ -18,9 +20,25 @@ body {
   padding: 0 64px;
 }
 
+// Links
+
 a,
 .link {
   cursor: pointer;
   text-decoration: none;
   transition: color .2s;
+}
+
+// Scaffold
+
+.page {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+
+main {
+  flex: 1;
 }

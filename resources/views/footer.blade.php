@@ -1,3 +1,4 @@
+</main>
 
 <footer>
 	<div class="container">
@@ -9,6 +10,8 @@
 		</nav>
 	</div>
 </footer>
+
+</div>
 
 <script src="/js/main.js"></script>
 
