@@ -1,9 +1,13 @@
 {
     "name": "stephanwagner/vaulty",
     "description": "",
+    "keywords": ["password"],
+    "homepage": "https://stephanwagner.me",
     "authors": [{
         "name": "Stephan Wagner",
         "email": "stephanwagner.me@gmail.com"
     }],
+    "type": "project",
+    "license": "MIT",
     "require": {}
 }
