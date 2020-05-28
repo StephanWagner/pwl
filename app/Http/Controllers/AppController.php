@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
 use Auth;
 
 class AppController extends Controller
@@ -14,6 +13,11 @@ class AppController extends Controller
 		}
 
 		return view('login');
+	}
+
+	function logout() {
+		Auth::logout();
+		return redirect('/');
 	}
 
 	function loginRequest(Request $request) {
@@ -30,13 +34,13 @@ class AppController extends Controller
 		} else {
 			return back()->with('data', [
 				'username' => $request->get('username'),
+				'remember' => $request->get('remember'),
 				'error' => 'Wrong login details'
 			]);
 		}
 	}
 
-	function logout() {
-		Auth::logout();
-		return redirect('/');
+	function changeLocaleRequest() {
+		App::setLocale('de');
 	}
 }
