@@ -1,3 +1,9 @@
+# assets
+/public/css/*
+!/public/css/.gitkeep
+/public/js/*
+!/public/js/.gitkeep
+
 # npm
 /node_modules
 
