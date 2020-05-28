@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'AppController@index');
+Route::get('/logout', 'AppController@logout');
+
+Route::post('/loginRequest', 'AppController@loginRequest');
+

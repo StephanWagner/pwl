@@ -16,26 +16,23 @@
 
 <body>
 
-<header>
-// HEADER
-</header>
+<h1>Login</h1>
 
-<main>
-// HOME
 
---<br><br>
+@if ($error = Session::get('data.error'))
 
-<a href="{{ url('/') }}">home</a><br><br>
+<b>{{ $error }}</b>
 
-<a href="{{ url('/logout') }}">Logout</a>
+@endif
 
-<br><br>--
 
-</main>
-
-<footer>
-// FOOTER
-</footer>
+<form method="post" action="{{ url('/loginRequest') }}">
+	{{ csrf_field() }}
+	<input type="text" name="username" value="{{ Session::get('data.username') }}" placeholder="username">
+	<input type="password" name="password" placeholder="Password">
+	<input type="checkbox"> Remember me
+	<button type="submit">Submit</button>
+</form>
 
 <script src="/js/main.js"></script>
 
