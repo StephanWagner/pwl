@@ -7,7 +7,9 @@ return [
 	'login.password' => 'Password',
 	'login.button' => 'Sign in',
 
-
 	// Logout
-    'logout' => 'Sign Out'
+	'logout' => 'Sign Out',
+
+	// Search
+	'search.placeholder' => 'Search...'
 ];

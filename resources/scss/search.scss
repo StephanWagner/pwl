@@ -1,0 +1,21 @@
+.search {
+  &__wrapper {
+    padding: 32px 0;
+  }
+
+  &__container {
+    max-width: 420px;
+    margin: auto;
+  }
+
+  &__textfield {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    padding: 0 30px;
+    font-size: 27px;
+    background: #fff;
+    border: 2px solid #bbb;
+  }
+}
