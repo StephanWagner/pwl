@@ -6,13 +6,21 @@ body {
 body {
   font-family: $defaultFontFamily;
   color: $defaultTextColor;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.6;
-  background: #fff;
+  background: #ddd;
 }
 
 .container {
   position: relative;
   max-width: 960px;
   margin: auto;
+  padding: 0 64px;
+}
+
+a,
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .2s;
 }
