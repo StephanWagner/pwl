@@ -1,0 +1,9 @@
+{
+    "name": "stephanwagner/pwl",
+    "description": "",
+    "authors": [{
+        "name": "Stephan Wagner",
+        "email": "stephanwagner.me@gmail.com"
+    }],
+    "require": {}
+}
