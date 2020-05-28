@@ -9,6 +9,7 @@
   }],
   "type": "project",
   "license": "MIT",
+  "minimum-stability": "dev",
   "require": {
     "php": "^7.2.5",
     "laravel/laravel": "^7.0"
