@@ -26,6 +26,7 @@ var scripts = [{
   name: 'main',
   src: [
     './node_modules/jbox/dist/jBox.all.js',
+    './resources/js/util.js',
     './resources/js/main.js'
   ],
   dest: './public/js/'
