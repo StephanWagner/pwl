@@ -2,7 +2,7 @@ var app = {
 
   // Default random password settings
   defaultRandomPasswordSettings: {
-    length: 24,
+    length: 16,
     uppercase: true,
     uppercaseChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lowercase: true,
@@ -311,12 +311,13 @@ function stringifyNumber(number) {
   }
 
   // Add decimals
-  if (numberStr.length <= 2) {
+  var decimal = numberStrOrg.substring(numberStr.length, numberStr.length + 1);
+  if (numberStr.length <= 2 && decimal != 0) {
     numberStr += '.' + numberStrOrg.substring(numberStr.length, numberStr.length + 1);
   }
 
-  // Substract 2 from index to fix wrong numbers (TODO why do we need to do this?)
-  index = index - 2;
+  // Substract 2 from index to fix wrong numbers
+  index = index - 1;
 
   return numberStr + ' ' + numberNames[index];
 }
