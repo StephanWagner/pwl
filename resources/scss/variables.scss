@@ -3,5 +3,10 @@ $defaultFontFamily: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 
 // Text colors
 $defaultTextColor: #222;
-$brandColor: #0066ff;
+$brandColor: #2599CC;
 $primaryColor: $brandColor;
+
+// Colors
+$pageBackground: #ddd;
+$headerButtonHighlight: $brandColor;
+$interfaceButtonHighlight: $brandColor;

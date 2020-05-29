@@ -10,6 +10,9 @@ return [
 	// Logout
 	'logout' => 'Sign Out',
 
+	// Filter
+	'filter.button' => 'Filter',
+
 	// Search
-	'search.placeholder' => 'Search...'
+	'search.placeholder' => 'Search...',
 ];
