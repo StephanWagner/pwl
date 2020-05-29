@@ -4,16 +4,13 @@ var app = {
   defaultRandomPasswordSettings: {
     length: 24,
     uppercase: true,
-    uppercaseChars: 'ABCDEFGHIJKLMNOPQRSTUVW',
+    uppercaseChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lowercase: true,
-    lowercaseChars: 'abcdefghijklmnopqrstuvw',
+    lowercaseChars: 'abcdefghijklmnopqrstuvwxyz',
     numbers: true,
     numbersChars: '0123456789',
     special: false,
-    specialChars: '§±!@#$%^&*()_-+=[]{}:;"\'|\\~<>,.?/',
-    // separators: false,
-    // separatorChar: '_',
-    // separatorsAmount: 2
+    specialChars: '§±!@#$%^&*()-_=+[{]};:\'"\\|`~<,>.?/'
   }
 
 };
@@ -109,10 +106,9 @@ function createRandomPasswords() {
     );
   }
 
-  // TODO
-  // var permutations = countPermutations();
-  // permutations = stringifyNumber(permutations);
-  // console.log(permutations);
+  var permutations = countPermutations();
+  permutations = stringifyNumber(permutations);
+  console.log(permutations);
 }
 
 // Create a random password
@@ -121,7 +117,6 @@ function getRandomPassword() {
 
   // Determine length
   var length = settings.length;
-  settings.separators && (length -= settings.separatorsAmount);
 
   // Create characters map
   var characters = getCharacterMap();
@@ -151,13 +146,6 @@ function getRandomPassword() {
     var index = Math.floor(Math.random() * mustContain.length);
     password += mustContain[index];
     mustContain.splice(index, 1);
-  }
-
-  // Add separators
-  if (settings.separators) {
-    var regex = new RegExp('.{1,' + Math.floor(password.length / (settings.separatorsAmount + 1)) + '}', 'g');
-    var passwordSplit = password.match(regex);
-    password = passwordSplit.join(settings.separatorChar, passwordSplit);
   }
 
   // Return password
@@ -194,6 +182,7 @@ function updateRandomPasswordOptions() {
     $(wrapperClass)[active ? 'addClass' : 'removeClass']('active');
     $(wrapperClass + ' .random-passwords-options__checkbox-icon').html(active ? 'check_box' : 'check_box_outline_blank');
   });
+  $('.random-password__length-option').val(settings.length).change();
   createRandomPasswords();
 }
 
@@ -252,10 +241,15 @@ function countPermutations() {
   return permutations;
 }
 
-// Function
+// Show a large number in text
 function stringifyNumber(number) {
 
-  // TODO
+  // Validate input
+  if (!number) {
+    return null;
+  }
+
+  // Number names
   var numberNames = [
     'Million',
     'Billion',
@@ -284,7 +278,12 @@ function stringifyNumber(number) {
     useGrouping: false
   });
 
-  while (numberStr) {
 
-  }
+  console.log(numberStr);
+
+  return;
+
+  // while (numberStr) {
+
+  // }
 }
