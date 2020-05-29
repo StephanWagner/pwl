@@ -1,5 +1,6 @@
 // Text
 $defaultFontFamily: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$monospaceFontFamily: 'Source Code Pro', monospace;
 
 // Text colors
 $defaultTextColor: #222;
@@ -7,6 +8,8 @@ $brandColor: #2599CC;
 $primaryColor: $brandColor;
 
 // Colors
-$pageBackground: #ddd;
+$grayLight: #ddd;
+$grayBorder: #bbb;
+$pageBackground: $grayLight;
 $headerButtonHighlight: $brandColor;
 $interfaceButtonHighlight: $brandColor;

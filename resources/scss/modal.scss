@@ -1,0 +1,62 @@
+$modalTitleHeight: 56px;
+
+.jBox-Modal.modal-vaulty {
+  .jBox-container,
+  .jBox-content,
+  .jBox-title {
+    border-radius: 0;
+  }
+
+  .jBox-container {
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, .6);
+  }
+
+  .jBox-content {
+    padding: 0;
+  }
+
+  .jBox-title {
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
+    padding: 0;
+    text-align: center;
+    line-height: $modalTitleHeight;
+    background: $grayLight;
+    border-bottom: 2px solid $grayBorder;
+  }
+
+  &.jBox-closeButton-title {
+    .jBox-closeButton {
+      width: $modalTitleHeight;
+    }
+  }
+}
+
+.modal-content {
+  display: none;
+}
+
+.modal-title {
+  &__button {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+
+    &--close {
+      left: auto;
+      right: 0;
+    }
+
+    &--refresh {
+      left: $modalTitleHeight;
+    }
+  }
+
+  &__icon {
+    width: $modalTitleHeight;
+    height: $modalTitleHeight;
+    line-height: $modalTitleHeight;
+  }
+}

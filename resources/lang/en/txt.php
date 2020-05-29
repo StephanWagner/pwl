@@ -15,4 +15,8 @@ return [
 
 	// Search
 	'search.placeholder' => 'Search...',
+
+	// Modal
+	'modal.add.title' => 'Create new',
+	'modal.passwords.title' => 'Password creator'
 ];

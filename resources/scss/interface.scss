@@ -11,21 +11,9 @@ $iconSize: 56px;
   }
 
   &__button-icon {
-    text-align: center;
-    font-size: 29px;
     line-height: $iconSize;
     height: $iconSize;
     width: $iconSize;
-  }
-
-  &__button {
-    cursor: pointer;
-    transition: color .2s, background-color .2s;
-
-    &:hover {
-      color: #fff;
-      background-color: $interfaceButtonHighlight;
-    }
   }
 }
 
@@ -69,7 +57,7 @@ $iconSize: 56px;
     padding: 0 30px;
     font-size: 27px;
     background: #fff;
-    border: 2px solid #bbb;
+    border: 2px solid $grayBorder;
   }
 }
 

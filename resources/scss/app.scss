@@ -33,6 +33,25 @@ a,
   }
 }
 
+.button-link {
+  cursor: pointer;
+  transition: color .2s, background-color .2s;
+  text-align: center;
+  font-size: 29px;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    color: #fff;
+    background-color: $interfaceButtonHighlight;
+  }
+}
+
 // Scaffold
 
 .page {
