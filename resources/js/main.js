@@ -2,23 +2,20 @@ var app = {
 
   // Default random password settings
   defaultRandomPasswordSettings: {
-    length: 26,
+    length: 24,
     uppercase: true,
-    uppercaseMin: 6,
     uppercaseChars: 'ABCDEFGHIJKLMNOPQRSTUVW',
     lowercase: true,
-    lowercaseMin: 6,
     lowercaseChars: 'abcdefghijklmnopqrstuvw',
     numbers: true,
-    numbersMin: 6,
     numbersChars: '0123456789',
     special: false,
-    specialMin: 3,
     specialChars: '§±!@#$%^&*()_-+=[]{}:;"\'|\\~<>,.?/',
-    separators: true,
-    separatorChar: '_',
-    separatorsAmount: 2
+    // separators: false,
+    // separatorChar: '_',
+    // separatorsAmount: 2
   }
+
 };
 
 $(document).ready(function () {
@@ -53,6 +50,7 @@ $(document).ready(function () {
     onOpen: function () {
       createRandomPasswords();
 
+      // Add buttons
       if (!this.titleInitialized) {
         this.titleContainer.prepend(
           $('<div class="modal-title__button modal-title__button--settings button-link"/>')
@@ -68,11 +66,27 @@ $(document).ready(function () {
         updateModalCloseIcon(this.titleContainer);
         this.titleInitialized = true;
       }
+
+      // Update slider
+      requestAnimationFrame(
+        function () {
+          $('.random-password__length-option').rangeslider('update', true);
+        }
+      );
     },
     onCreated: function () {
       updateRandomPasswordOptions();
     }
   }));
+
+  // Init password length slider
+  $('.random-password__length-option').rangeslider({
+    polyfill : false,
+    onSlideEnd: function(position, value) {
+      setPasswordOption('length', value);
+      createRandomPasswords();
+    }
+  });
 
 });
 
@@ -114,9 +128,13 @@ function getRandomPassword() {
 
   // Create must contain list
   var mustContain = [];
+  var activeOptions = getActiveRandomPasswordOptions();
+  var containRatio = activeOptions / (activeOptions + 1) / activeOptions;
+  var containAmount = Math.floor(containRatio * length);
+
   $.each(['uppercase', 'lowercase', 'numbers', 'special'], function (index, item) {
-    if (settings[item] && settings[item + 'Min'] > 0) {
-      for (var i = 1; i <= settings[item + 'Min']; i++) {
+    if (settings[item]) {
+      for (var i = 1; i <= containAmount; i++) {
         mustContain.push(getRandomChar(settings[item + 'Chars']));
       }
     }
@@ -197,8 +215,26 @@ function toggleRandomPasswordOption(id) {
     }
   }
 
-  settings[id] = !settings[id];
+  setPasswordOption(id, !settings[id]);
   updateRandomPasswordOptions();
+}
+
+// Set a possword option
+function setPasswordOption(option, value) {
+  var settings = getPasswordSettings();
+  settings[option] = value;
+}
+
+// Get amount of toggled permutations
+function getActiveRandomPasswordOptions() {
+  var settings = getPasswordSettings();
+  var activeOptions = 0;
+  $.each(['uppercase', 'lowercase', 'numbers', 'special'], function (index, item) {
+    if (settings[item]) {
+      activeOptions++;
+    }
+  });
+  return activeOptions;
 }
 
 // Count permutations

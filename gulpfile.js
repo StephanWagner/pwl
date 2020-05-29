@@ -15,6 +15,7 @@ var styles = [{
     './resources/scss/normalize.scss',
     './resources/scss/reset.scss',
     './node_modules/jbox/dist/jBox.all.css',
+    './node_modules/rangeslider.js/dist/rangeslider.css',
     './resources/scss/main.scss'
   ],
   srcWatch: ['./resources/scss/**/*.scss'],
@@ -26,6 +27,7 @@ var scripts = [{
   name: 'main',
   src: [
     './node_modules/jbox/dist/jBox.all.js',
+    './node_modules/rangeslider.js/dist/rangeslider.js',
     './resources/js/util.js',
     './resources/js/main.js'
   ],
