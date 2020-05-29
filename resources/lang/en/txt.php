@@ -18,5 +18,6 @@ return [
 
 	// Modal
 	'modal.add.title' => 'Create new',
-	'modal.passwords.title' => 'Password creator'
+	'modal.passwords.title' => 'Password creator',
+	'modal.permutations' => 'About <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers" target="_blank"></a> possibilities'
 ];

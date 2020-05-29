@@ -108,7 +108,9 @@ function createRandomPasswords() {
 
   var permutations = countPermutations();
   permutations = stringifyNumber(permutations);
-  console.log(permutations);
+  $('.random-passwords__probability-wrapper a').html(permutations);
+
+  // https://simple.wikipedia.org/wiki/Names_for_large_numbers
 }
 
 // Create a random password
@@ -251,6 +253,7 @@ function stringifyNumber(number) {
 
   // Number names
   var numberNames = [
+    'Thousand',
     'Million',
     'Billion',
     'Trillion',
@@ -271,19 +274,49 @@ function stringifyNumber(number) {
     'Octodecillion',
     'Novemdecillion',
     'Vigintillion',
-    'Centillion'
+    'Centillion',
+    'Vigintillion',
+    'Unvigintillion',
+    'Duovigintillion',
+    'Trevigintillion',
+    'Quattuorvigintillion',
+    'Quinvigintillion',
+    'Sexvigintillion',
+    'Septenvigintillion',
+    'Octovigintillion',
+    'Novemvigintillion',
+    'Trigintillion',
+    'Untrigintillion',
+    'Duotrigintillion'
   ];
 
+  // Return rounded number when not at least a billion
+  if (number < 1000 * 1000 * 1000) {
+    return number.toLocaleString();
+  }
+
+  // Get the number as a string
   var numberStr = number.toLocaleString('fullwide', {
     useGrouping: false
   });
+  var numberStrOrg = numberStr;
 
+  // Start a index null;
+  var index = 0;
 
-  console.log(numberStr);
+  // Keep looping when string is at least 4 chars
+  while (numberStr.length >= 4) {
+    numberStr = numberStr.substring(0, numberStr.length - 3);
+    index++;
+  }
 
-  return;
+  // Add decimals
+  if (numberStr.length <= 2) {
+    numberStr += '.' + numberStrOrg.substring(numberStr.length, numberStr.length + 1);
+  }
 
-  // while (numberStr) {
+  // Substract 2 from index to fix wrong numbers (TODO why do we need to do this?)
+  index = index - 2;
 
-  // }
+  return numberStr + ' ' + numberNames[index];
 }

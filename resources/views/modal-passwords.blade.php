@@ -37,7 +37,7 @@
 					<input class="random-password__length-option" type="range" min="6" max="32" step="1" value="26">
 				</div>
 				<div class="random-passwords__probability-wrapper">
-
+					{!! __('txt.modal.permutations') !!}
 				</div>
 			</div>
 
