@@ -30,7 +30,8 @@ var scripts = [{
     './node_modules/rangeslider.js/dist/rangeslider.js',
     './resources/js/util.js',
     './resources/js/main.js',
-    './resources/js/save.js'
+    './resources/js/save.js',
+    './resources/js/password-list.js'
   ],
   dest: './public/js/'
 }];

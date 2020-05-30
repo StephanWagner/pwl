@@ -11,7 +11,11 @@ class AppController extends Controller
 {
     function index() {
 		if (Auth::check()) {
-			return view('home');
+			$passwords = Passwords::all();
+
+			return view('home', [
+				'passwords' => $passwords
+			]);
 		}
 
 		return view('login');
@@ -48,6 +52,7 @@ class AppController extends Controller
 
 	function save(Request $request) {
 
+		// Abort if not logged in
 		if (!Auth::check()) {
 			return response()->json([
 				'error' => __('txt.save.error.auth')

@@ -24,19 +24,28 @@ $(document).ready(function () {
     height: 560,
     adjustDistance: 16,
     closeButton: 'title',
-    getTitle: 'data-title',
-    onOpen: function () {
-      if (!this.titleInitialized) {
-        updateModalCloseIcon(this.titleContainer);
-      }
-    }
+    getTitle: 'data-title'
   };
 
   // Create new modal
   new jBox('Modal', $.extend(defaultModalOptions, {
     addClass: 'modal-vaulty modal-vaulty--edit',
     attach: '[data-modal="edit"]',
-    content: $('.modal-content--edit')
+    content: $('.modal-content--edit'),
+    onOpen: function () {
+      if (!this.titleInitialized) {
+        updateModalCloseIcon(this.titleContainer);
+      }
+
+      var sourceId = this.source.attr('data-id');
+      var id = (sourceId === 'new') ? '' : sourceId;
+      var title = (sourceId === 'new') ? '' : $('[data-password-title="' + id + '"]').text().trim();
+      var content = (sourceId === 'new') ? '' : $('[data-password-content="' + id + '"]').text().trim();
+
+      $('.edit__id-input').val(id);
+      $('.edit__title-input').val(title);
+      $('.edit__content-input').val(content);
+    }
   }));
 
   // Passwords modal
@@ -45,6 +54,9 @@ $(document).ready(function () {
     attach: '[data-modal="passwords"]',
     content: $('.modal-content--passwords'),
     onOpen: function () {
+      if (!this.titleInitialized) {
+        updateModalCloseIcon(this.titleContainer);
+      }
       createRandomPasswords();
 
       // Add buttons

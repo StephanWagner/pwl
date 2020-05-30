@@ -51,6 +51,13 @@ function save() {
       if (response.success && response.id) {
         $('.edit__id-input').val(response.id);
         success('Data was saved'); // TODO Translate
+
+        if ($('.passwords__item-wrapper[data-id="' + response.id + '"]')) {
+          $('[data-password-title="' + id + '"]').text(title);
+          $('[data-password-content="' + id + '"]').text(content);
+        } else {
+          // TODO
+        }
         return;
       }
 

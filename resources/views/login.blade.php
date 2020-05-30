@@ -1,7 +1,9 @@
 @include('header')
 
 <form method="post" action="{{ url('/loginRequest') }}">
+
 	{{ csrf_field() }}
+
 	<input id="login-remember" type="hidden" name="remember" value="{{ Session::get('data.remember') ? '1' : '0' }}">
 
 	<div class="login__wrapper">
