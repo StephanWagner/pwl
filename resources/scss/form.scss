@@ -1,9 +1,13 @@
 .textfield {
   border: 2px solid $grayBorder;
-  padding: 8px 25px;
+  padding: 8px 24px;
   font-size: 17px;
   line-height: 32px;
   transition: border-color .2s;
+
+  &.error {
+    border-color: #f00;
+  }
 
   &:focus,
   &.active {
@@ -21,4 +25,21 @@
   white-space: nowrap;
   color: #fff;
   padding: 0 32px;
+  transition: background-color .2s;
+
+  &[disabled] {
+    cursor: default !important;
+    color: #ccc !important;
+    background: #eee !important;
+    box-shadow: none !important;
+  }
+}
+
+.loading-bar,
+.button[disabled].loading-bar {
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, rgba(255, 255, 255, .0) 25%, rgba(255, 255, 255, .0) 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%, rgba(255, 255, 255, .0) 75%, rgba(255, 255, 255, .0)) !important;
+  background-size: 32px 32px !important;
+  background-repeat: repeat !important;
+  transition: background-position 60000s linear !important;
+  background-position: 4000000px !important;
 }

@@ -17,4 +17,4 @@ Route::get('/', 'AppController@index');
 Route::get('/logout', 'AppController@logout');
 
 Route::post('/loginRequest', 'AppController@loginRequest');
-
+Route::post('/save', 'AppController@save');

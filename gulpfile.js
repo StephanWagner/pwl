@@ -29,7 +29,8 @@ var scripts = [{
     './node_modules/jbox/dist/jBox.all.js',
     './node_modules/rangeslider.js/dist/rangeslider.js',
     './resources/js/util.js',
-    './resources/js/main.js'
+    './resources/js/main.js',
+    './resources/js/save.js'
   ],
   dest: './public/js/'
 }];

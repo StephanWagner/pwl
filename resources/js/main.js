@@ -144,7 +144,7 @@ function copyPassword(wrapper) {
   copyToClipboard(password);
   new jBox('Notice', {
     color: 'green',
-    stack: false,
+    stack: true,
     delayOnHover: false,
     autoClose: 4000,
     attributes: {

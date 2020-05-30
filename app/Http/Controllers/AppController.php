@@ -43,4 +43,16 @@ class AppController extends Controller
 	function changeLocaleRequest() {
 		App::setLocale('de');
 	}
+
+	function save(Request $request) {
+
+		if (!Auth::check()) {
+			return null;
+		}
+
+		return response()->json([
+			'name' => 'Abigail',
+			'state' => 'CA'
+		]);
+	}
 }
