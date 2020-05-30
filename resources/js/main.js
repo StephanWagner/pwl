@@ -81,9 +81,11 @@ $(document).ready(function () {
   // Init password length slider
   $('.random-password__length-option').rangeslider({
     polyfill: false,
+    onSlide: function (position, value) {
+      $('.random-passwords__length-option-amount').html(value);
+    },
     onSlideEnd: function (position, value) {
       setPasswordOption('length', value);
-      $('.random-passwords__length-option-amount').html(value);
       createRandomPasswords();
     }
   });
