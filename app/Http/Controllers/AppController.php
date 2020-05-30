@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Passwords;
 use Auth;
 
 class AppController extends Controller
@@ -48,17 +50,42 @@ class AppController extends Controller
 
 		if (!Auth::check()) {
 			return response()->json([
-				'error' => 'Please sign in to save data' // TODO translate
+				'error' => __('txt.save.error.auth')
 			]);
 		}
 
 		$id = $request->get('id');
-		$title = $request->get('username');
-		$content = $request->get('content');
+		$title = trim($request->get('title'));
+		$content = trim($request->get('content'));
 
+		if (empty($title)) {
+			return response()->json([
+				'error' => __('txt.save.error.title')
+			]);
+		}
 
+		if (empty($content)) {
+			return response()->json([
+				'error' => __('txt.save.error.content')
+			]);
+		}
+
+		// Save data
+		if ($id) {
+			$record = Passwords::find($id);
+		}
+
+		if (!$id || !$record) {
+			$record = new Passwords();
+		}
+
+		$record->title = $title;
+		$record->content = $content;
+		$record->save();
+		$id = $record->id;
 
 		return response()->json([
+			'id' => $id,
 			'success' => true
 		]);
 	}

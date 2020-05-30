@@ -20,5 +20,10 @@ return [
 	// Modal
 	'modal.add.title' => 'Create new',
 	'modal.passwords.title' => 'Password creator',
-	'modal.permutations' => 'About <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers" target="_blank"></a> possibilities'
+	'modal.permutations' => 'About <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers" target="_blank"></a> possibilities',
+
+	// Saving
+	'save.error.auth' => 'Please sign in to save data',
+	'save.error.title' => 'Please fill in the title',
+	'save.error.content' => 'Please fill in the content'
 ];

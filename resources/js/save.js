@@ -35,9 +35,11 @@ function save() {
       'X-CSRF-TOKEN': $('.modal-content--edit [name="_token"]').val()
     },
     beforeSend: function () {
+      $('.edit-textfield').attr('disabled', 'disabled');
       $('.edit__button').attr('disabled', 'disabled').addClass('loading-bar');
     },
     complete: function () {
+      $('.edit-textfield').removeAttr('disabled');
       $('.edit__button').removeAttr('disabled').removeClass('loading-bar');
     },
     success: function (response) {
@@ -46,8 +48,10 @@ function save() {
         return;
       }
 
-      if (response.success) {
-        success(txt);
+      if (response.success && response.id) {
+        $('.edit__id-input').val(response.id);
+        success('Data was saved'); // TODO Translate
+        return;
       }
 
       error();
