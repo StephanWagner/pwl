@@ -38,3 +38,26 @@ function copyToClipboard(text) {
   document.body.removeChild(input);
   return result;
 }
+
+// Show messages
+function message(color, txt) {
+  new jBox('Notice', {
+    color: color,
+    stack: true,
+    delayOnHover: false,
+    autoClose: 4000,
+    attributes: {
+      x: 'right',
+      y: 'bottom'
+    },
+    content: txt
+  });
+}
+
+function error(txt) {
+  message('red', txt || 'Oops, an error occured!'); // TODO translate
+}
+
+function success(txt) {
+  message('green', txt)
+}

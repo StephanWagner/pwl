@@ -47,12 +47,19 @@ class AppController extends Controller
 	function save(Request $request) {
 
 		if (!Auth::check()) {
-			return null;
+			return response()->json([
+				'error' => 'Please sign in to save data' // TODO translate
+			]);
 		}
 
+		$id = $request->get('id');
+		$title = $request->get('username');
+		$content = $request->get('content');
+
+
+
 		return response()->json([
-			'name' => 'Abigail',
-			'state' => 'CA'
+			'success' => true
 		]);
 	}
 }

@@ -40,8 +40,17 @@ function save() {
     complete: function () {
       $('.edit__button').removeAttr('disabled').removeClass('loading-bar');
     },
-    success: function () {
+    success: function (response) {
+      if (!response || response.error) {
+        error(response.error);
+        return;
+      }
 
+      if (response.success) {
+        success(txt);
+      }
+
+      error();
     },
     error: function () {
       ajaxError();
@@ -51,15 +60,5 @@ function save() {
 
 // Ajax error
 function ajaxError() {
-  new jBox('Notice', {
-    color: 'red',
-    stack: true,
-    delayOnHover: false,
-    autoClose: 4000,
-    attributes: {
-      x: 'right',
-      y: 'bottom'
-    },
-    content: 'Notwork error' // TODO translate
-  });
+  error('Notwork error'); // TODO translate
 }
