@@ -132,6 +132,17 @@ function copyPassword(wrapper) {
   animateEl($(wrapper).find('.random-passwords__copy-button-icon'), 'pulseUp');
   var password = $(wrapper).find('.random-passwords__password-text').html();
   copyToClipboard(password);
+  new jBox('Notice', {
+    color: 'green',
+    stack: false,
+    delayOnHover: false,
+    autoClose: 4000,
+    attributes: {
+      x: 'right',
+      y: 'bottom'
+    },
+    content: 'Password copied to clipboard' // TODO translate
+  });
 }
 
 // Create a random password

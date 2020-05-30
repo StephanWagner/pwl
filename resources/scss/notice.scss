@@ -1,0 +1,14 @@
+.jBox-Notice {
+  .jBox-container {
+    border-radius: 0;
+
+    .jBox-Notice-green & {
+      background: #5d0;
+    }
+  }
+
+  .jBox-content {
+    border-radius: 0;
+    padding: 16px 32px;
+  }
+}
