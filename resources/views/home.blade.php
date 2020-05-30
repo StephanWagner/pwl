@@ -23,7 +23,7 @@
 				<div data-modal="passwords" data-title="{{ __('txt.modal.passwords.title') }}" class="interface__button options__button options__button--password-creator button-link">
 					<span class="interface__button-icon options__button-icon options__button-icon--password-creator material-icons-sharp">grading</span>
 				</div>
-				<div data-modal="add" data-title="{{ __('txt.modal.add.title') }}" class="interface__button options__button options__button--add button-link">
+				<div data-modal="edit" data-title="{{ __('txt.modal.add.title') }}" class="interface__button options__button options__button--add button-link">
 					<span class="interface__button-icon options__button-icon options__button-icon--add material-icons-sharp">add</span>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 	</div>
 </div>
 
-@include('modal-add')
+@include('modal-edit')
 @include('modal-passwords')
 
 @include('footer')

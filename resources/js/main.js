@@ -34,9 +34,9 @@ $(document).ready(function () {
 
   // Create new modal
   new jBox('Modal', $.extend(defaultModalOptions, {
-    addClass: 'modal-vaulty modal-vaulty--add',
-    attach: '[data-modal="add"]',
-    content: $('.modal-content--add')
+    addClass: 'modal-vaulty modal-vaulty--edit',
+    attach: '[data-modal="edit"]',
+    content: $('.modal-content--edit')
   }));
 
   // Passwords modal
