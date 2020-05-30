@@ -151,6 +151,7 @@ function createRandomPasswords() {
 
 // Copy password
 function copyPassword(wrapper) {
+  $(wrapper).addClass('used');
   animateEl($(wrapper).find('.random-passwords__copy-button-icon'), 'pulseUp');
   var password = $(wrapper).find('.random-passwords__password-text').html();
   copyToClipboard(password);
