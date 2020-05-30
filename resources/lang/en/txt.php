@@ -6,6 +6,7 @@ return [
 	'login.username' => 'Username',
 	'login.password' => 'Password',
 	'login.button' => 'Sign in',
+	'login.error' => 'Wrong login details',
 
 	// Logout
 	'logout' => 'Sign Out',

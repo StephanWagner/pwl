@@ -29,13 +29,13 @@ class AppController extends Controller
 
 		$remember = $request->get('remember');
 
-		if (Auth::attempt($user_data, $remember)) {
+		if (Auth::attempt($user_data, $remember == '1')) {
 			return redirect('/');
 		} else {
 			return back()->with('data', [
 				'username' => $request->get('username'),
 				'remember' => $request->get('remember'),
-				'error' => 'Wrong login details'
+				'error' => __('txt.login.error')
 			]);
 		}
 	}

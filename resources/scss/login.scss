@@ -1,0 +1,79 @@
+.login {
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -48px;
+
+    .button {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &__error {
+    color: #f00;
+    text-align: center;
+    line-height: 32px;
+    margin: 0 0 16px;
+  }
+
+  &__container {
+    margin: auto;
+  }
+
+  &__textfield {
+    .textfield {
+      width: 260px;
+    }
+
+    &--username {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__checkbox-wrapper {
+    margin: 16px 0;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      .login__checkbox {
+        color: $primaryColor;
+        border-color: $primaryColor;
+      }
+
+      &__checkbox {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  &__checkbox {
+    width: 22px;
+    height: 22px;
+    align-self: center;
+    line-height: 16px;
+    border: 2px solid $grayBorder;
+    background: #fff;
+    transition: color .2s;
+    color: $grayBorder;
+    margin: 0 12px 0 0;
+    transition: border-color .2s, color .2s;
+  }
+
+  &__checkbox-icon {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+    color: $defaultTextColor;
+
+    .active & {
+      display: block;
+    }
+  }
+}

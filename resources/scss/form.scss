@@ -1,0 +1,23 @@
+.textfield {
+  border: 2px solid $grayBorder;
+  padding: 8px 25px;
+  font-size: 17px;
+  line-height: 32px;
+  transition: border-color .2s;
+
+  &:focus,
+  &.active {
+    border-color: $primaryColor;
+  }
+}
+
+.button {
+  display: block;
+  border: 0;
+  background: $brandColor;
+  height: 48px;
+  font-size: 21px;
+  white-space: nowrap;
+  color: #fff;
+  padding: 0 32px;
+}

@@ -90,6 +90,14 @@ $(document).ready(function () {
 
 });
 
+// Toggle remember login
+function toggleRememberLogin() {
+  var remember = $('#login-remember').val() === '1';
+  remember = !remember;
+  $('#login-remember').val(remember ? '1' : '0')
+  $('.login__checkbox-wrapper')[remember ? 'addClass' : 'removeClass']('active');
+}
+
 // Update jBox close icon
 function updateModalCloseIcon(el) {
   el.find('.jBox-closeButton')
