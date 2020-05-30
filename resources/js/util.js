@@ -1,3 +1,4 @@
+// Animations
 var animationSpeeds = {
   'tada': 1000,
   'tadaSmall': 1000,
@@ -24,4 +25,16 @@ function animateEl(element, animation, complete) {
     element.removeClass(element.data('animating')).data('animating', null);
     complete && complete();
   }), animationSpeeds[animation]));
+}
+
+// Copy to clipboard
+function copyToClipboard(text) {
+  var input = document.createElement('input');
+  input.setAttribute('value', text);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 1000);
+  var result = document.execCommand('copy');
+  document.body.removeChild(input);
+  return result;
 }

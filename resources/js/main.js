@@ -51,7 +51,7 @@ $(document).ready(function () {
       if (!this.titleInitialized) {
         this.titleContainer.prepend(
           $('<div class="modal-title__button modal-title__button--settings button-link"/>')
-          .html('<span class="modal-title__icon modal-title__icon--options material-icons-sharp">settings</span>')
+          .html('<span class="modal-title__icon modal-title__icon--options material-icons-sharp" onclick="toggleRandomPasswordOptions()">settings</span>')
         );
         this.titleContainer.prepend(
           $('<div class="modal-title__button modal-title__button--refresh button-link"/>')
@@ -70,6 +70,8 @@ $(document).ready(function () {
           $('.random-password__length-option').rangeslider('update', true);
         }
       );
+      var settings = getPasswordSettings();
+      $('.random-passwords__length-option-amount').html(settings.length);
     },
     onCreated: function () {
       updateRandomPasswordOptions();
@@ -78,9 +80,10 @@ $(document).ready(function () {
 
   // Init password length slider
   $('.random-password__length-option').rangeslider({
-    polyfill : false,
-    onSlideEnd: function(position, value) {
+    polyfill: false,
+    onSlideEnd: function (position, value) {
       setPasswordOption('length', value);
+      $('.random-passwords__length-option-amount').html(value);
       createRandomPasswords();
     }
   });
@@ -94,6 +97,12 @@ function updateModalCloseIcon(el) {
     .html('<span class="modal-title__icon modal-title__icon--close material-icons-sharp">close</span>');
 }
 
+// Toggle random password options
+function toggleRandomPasswordOptions() {
+  $('.modal-vaulty--passwords').toggleClass('password-options-active');
+  $('.modal-title__button--settings').toggleClass('active');
+}
+
 // Create random passwords
 function createRandomPasswords() {
   $('.random-passwords__list').html('');
@@ -102,15 +111,27 @@ function createRandomPasswords() {
     var password = getRandomPassword();
 
     $('.random-passwords__list').append(
-      $('<div class="random-passwords__password"/>').text(password)
+      $('<div class="random-passwords__password button-link-container"/>').append(
+        $('<div class="random-passwords__password-text"/>').text(password)
+      ).append(
+        $('<div class="random-passwords__copy-button button-link"/>')
+        .html('<span class="random-passwords__copy-button-icon material-icons-sharp">file_copy</span>')
+      ).on('click', function () {
+        copyPassword(this);
+      })
     );
   }
 
   var permutations = countPermutations();
   permutations = stringifyNumber(permutations);
   $('.random-passwords__probability-wrapper a').html(permutations);
+}
 
-  // https://simple.wikipedia.org/wiki/Names_for_large_numbers
+// Copy password
+function copyPassword(wrapper) {
+  animateEl($(wrapper).find('.random-passwords__copy-button-icon'), 'pulseUp');
+  var password = $(wrapper).find('.random-passwords__password-text').html();
+  copyToClipboard(password);
 }
 
 // Create a random password

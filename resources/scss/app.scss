@@ -33,11 +33,15 @@ a,
   }
 }
 
+.button-link-container {
+  cursor: pointer;
+}
+
 .button-link {
   cursor: pointer;
   transition: color .2s, background-color .2s;
   text-align: center;
-  font-size: 29px;
+  font-size: 24px;
   overflow: hidden;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -46,7 +50,9 @@ a,
   -ms-user-select: none;
   user-select: none;
 
-  &:hover {
+  &:hover,
+  &.active,
+  .button-link-container:hover & {
     color: #fff;
     background-color: $interfaceButtonHighlight;
   }
