@@ -19,3 +19,9 @@ Build assest for production:
 gulp build
 npm run build
 ```
+
+---
+
+Install
+
+- Use `php artisan key:generate` to generate a key

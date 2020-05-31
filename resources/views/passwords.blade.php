@@ -15,7 +15,7 @@
 							<span class="passwords__delete-button-icon material-icons-sharp">delete</span>
 						</div>
 					</div>
-					<div class="passwords__content" data-password-content="{{ $password->id }}">{{ $password->content }}</div>
+					<div class="passwords__content" data-password-content="{{ $password->id }}">{{ Crypt::decryptString($password->content) }}</div>
 				</div>
 			</div>
 
