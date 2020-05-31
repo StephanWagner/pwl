@@ -19,7 +19,7 @@ function openPasswordContent(id) {
   }
 
   item.addClass('list-item-active');
-  item.find('.passwords__content').slideDown(app.contentSlideSpeed);
+  item.find('.passwords__content-wrapper').slideDown(app.contentSlideSpeed);
 }
 
 // Close currently active password content
@@ -31,5 +31,5 @@ function closeActivePasswordContent() {
   }
 
   item.removeClass('list-item-active');
-  item.find('.passwords__content').slideUp(app.contentSlideSpeed);
+  item.find('.passwords__content-wrapper').slideUp(app.contentSlideSpeed);
 }

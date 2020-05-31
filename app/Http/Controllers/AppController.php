@@ -12,7 +12,7 @@ class AppController extends Controller
 {
     function index() {
 		if (Auth::check()) {
-			$passwords = Passwords::all();
+			$passwords = Passwords::orderBy('title', 'asc')->get();
 
 			return view('home', [
 				'passwords' => $passwords

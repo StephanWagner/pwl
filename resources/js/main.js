@@ -27,11 +27,12 @@ $(document).ready(function () {
     getTitle: 'data-title'
   };
 
-  // Create new modal
+  // Edit modal
   new jBox('Modal', $.extend(defaultModalOptions, {
     addClass: 'modal-vaulty modal-vaulty--edit',
     attach: '[data-modal="edit"]',
     content: $('.modal-content--edit'),
+    isolateScroll: false,
     onOpen: function () {
       if (!this.titleInitialized) {
         updateModalCloseIcon(this.titleContainer);
