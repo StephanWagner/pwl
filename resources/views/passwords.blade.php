@@ -2,7 +2,7 @@
 	<div class="passwords__container">
 		@foreach ($passwords as $password)
 
-			<div class="passwords__item-wrapper" data-id="{{ $password->id }}">
+			<div class="passwords__item-wrapper passwords__item-wrapper-{{ $password->id }}" data-id="{{ $password->id }}">
 				<div class="passwords__item-container">
 					<div class="passwords__title-wrapper">
 						<div class="passwords__title-container container">
