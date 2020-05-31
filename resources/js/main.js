@@ -40,8 +40,8 @@ $(document).ready(function () {
 
       var sourceId = this.source.attr('data-id');
       var id = (sourceId === 'new') ? '' : sourceId;
-      var title = (sourceId === 'new') ? '' : $('[data-password-title="' + id + '"]').text().trim();
-      var content = (sourceId === 'new') ? '' : $('[data-password-content="' + id + '"]').text().trim();
+      var title = (sourceId === 'new') ? '' : $('[data-password-title="' + id + '"]').html().trim();
+      var content = (sourceId === 'new') ? '' : $('[data-password-content="' + id + '"]').html().trim();
 
       $('.edit__id-input').val(id);
       $('.edit__title-input').val(title);

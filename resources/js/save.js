@@ -53,8 +53,8 @@ function save() {
         success('Data was saved'); // TODO Translate
 
         if ($('.passwords__item-wrapper[data-id="' + response.id + '"]')) {
-          $('[data-password-title="' + id + '"]').text(title);
-          $('[data-password-content="' + id + '"]').text(content);
+          $('[data-password-title="' + id + '"]').html(title);
+          $('[data-password-content="' + id + '"]').html(content);
         } else {
           // TODO
         }

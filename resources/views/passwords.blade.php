@@ -20,7 +20,7 @@
 					<div class="passwords__content-toggler">
 						<div class="passwords__content-wrapper">
 							<div class="passwords__content-container container">
-								<div class="passwords__content" data-password-content="{{ $password->id }}">{{ Crypt::decryptString($password->content) }}</div>
+								<div class="passwords__content" data-password-content="{{ $password->id }}">{!! Crypt::decryptString($password->content) !!}</div>
 							</div>
 						</div>
 					</div>
