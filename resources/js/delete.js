@@ -1,4 +1,4 @@
-function deleteItem (id) {
+function deleteItem(id) {
   $.ajax({
     url: '/delete',
     method: 'post',

@@ -11,7 +11,6 @@ $(document).ready(function () {
 
     $.each($('.passwords__item-wrapper'), function (index, item) {
       var item = $(item);
-      // var itemId = item.attr('data-id');
       var title = item.find('.passwords__title').text();
       var content = item.find('.passwords__content').text();
       var reg = new RegExp(searchValue, 'i');

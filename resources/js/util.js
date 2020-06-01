@@ -81,8 +81,8 @@ function insertMetachars(tag) {
     case 'i':
     case 'u':
     case 's':
-      sStartTag = '<' + tag+ '>';
-      sEndTag = '</' + tag+ '>';
+      sStartTag = '<' + tag + '>';
+      sEndTag = '</' + tag + '>';
       break;
     case 'a':
       sStartTag = '<a href="' + selected + '" target="_blank">';
