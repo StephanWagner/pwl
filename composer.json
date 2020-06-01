@@ -1,6 +1,6 @@
 {
   "name": "stephanwagner/vaulty",
-  "description": "",
+  "description": "A simple tool to store your passwords",
   "keywords": ["password"],
   "homepage": "https://stephanwagner.me",
   "authors": [{
@@ -48,14 +48,7 @@
         "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
       ],
       "post-create-project-cmd": [
-        "@php artisan key:generate --ansi",
-        "@php install.php"
-      ],
-      "post-install-cmd": [
-        "@php install.php"
-      ],
-      "post-update-cmd": [
-        "@php install.php"
+        "@php artisan key:generate --ansi"
       ]
   }
 }
