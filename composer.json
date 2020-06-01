@@ -49,10 +49,13 @@
       ],
       "post-create-project-cmd": [
         "@php artisan key:generate --ansi",
-        "@command -v npm && npm install && npm run build"
+        "@php install.php"
       ],
-      "post-package-update": [
-        "@command -v npm && npm install && npm run build"
+      "post-install-cmd": [
+        "@php install.php"
+      ],
+      "post-update-cmd": [
+        "@php install.php"
       ]
   }
 }
