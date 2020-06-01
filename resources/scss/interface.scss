@@ -17,37 +17,19 @@ $iconSize: 56px;
   }
 }
 
-.filters {
-  &__wrapper {
-    width: 25%;
-  }
-
-  &__container {
-    display: flex;
-  }
-
-  &__button {
-    align-self: center;
-    display: flex;
-  }
-
-  &__label {
-    font-size: 19px;
-    padding: 0 24px 0 0;
-    align-self: center;
-  }
-}
 
 .options {
   &__wrapper {
     width: 25%;
     display: flex;
-    justify-content: flex-end;
+
+    &--right {
+      justify-content: flex-end;
+    }
   }
 
   &__container {
     display: flex;
-    flex-direction: flex-end;
   }
 
   &__button {
