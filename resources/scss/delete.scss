@@ -1,0 +1,48 @@
+.modal-content {
+  &--delete {
+    height: 100%;
+  }
+}
+
+.modal-delete {
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__item-title {
+    padding: 16px 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  &__warning {
+    color: #f00;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  &__button {
+    width: calc(50% - 4px);
+
+    &--cancel {
+      background: #ccc;
+    }
+  }
+}

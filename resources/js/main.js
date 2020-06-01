@@ -59,6 +59,31 @@ $(document).ready(function () {
     }
   }));
 
+  // Delete modal
+  app.deleteModal = new jBox('Modal', $.extend(defaultModalOptions, {
+    addClass: 'modal-vaulty modal-vaulty--delete',
+    attach: '[data-modal="delete"]',
+    content: $('.modal-content--delete'),
+    width: 460,
+    height: 300,
+    onCreated: function () {
+      this.wrapper.find('.modal-delete__button--cancel').on('click', function () {
+        this.close();
+      }.bind(this));
+    },
+    onOpen: function () {
+      if (!this.titleInitialized) {
+        updateModalCloseIcon(this.titleContainer);
+      }
+      var id = this.source.attr('data-id');
+      var title = $('[data-password-title="' + id + '"]').html().trim();
+      $('.modal-delete__item-title').html(title);
+      this.wrapper.find('.modal-delete__button--submit').off('click').on('click', function () {
+        deleteItem(id);
+      }.bind(this));
+    }
+  }));
+
   // Passwords modal
   new jBox('Modal', $.extend(defaultModalOptions, {
     addClass: 'modal-vaulty modal-vaulty--passwords',

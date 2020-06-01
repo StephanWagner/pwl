@@ -12,7 +12,7 @@
 							<div class="passwords__title-button passwords__title-button--edit button-link" data-modal="edit" data-id="{{ $password->id }}" data-title="{{ __('txt.modal.edit.title') }}">
 								<span class="passwords__title-button-icon passwords__title-button-icon--edit material-icons-sharp">create</span>
 							</div>
-							<div class="passwords__title-button passwords__title-button--delete button-link">
+							<div class="passwords__title-button passwords__title-button--delete button-link" data-modal="delete" data-id="{{ $password->id }}" data-title="{{ __('txt.modal.delete.title') }}">
 								<span class="passwords__title-button-icon passwords__title-button-icon--delete material-icons-sharp">delete</span>
 							</div>
 						</div>
@@ -30,7 +30,3 @@
 		@endforeach
 	</div>
 </div>
-
-
-
-

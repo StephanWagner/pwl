@@ -20,6 +20,11 @@ return [
 	// Modal
 	'modal.add.title' => 'Create new',
 	'modal.edit.title' => 'Edit',
+	'modal.delete.title' => 'Delete',
+	'modal.delete.button.cancel' => 'Cancel',
+	'modal.delete.button.submit' => 'Delete',
+	'modal.delete.content' => 'Really delete the following item:',
+	'modal.delete.warning' => 'This action cannot be undone!',
 	'modal.passwords.title' => 'Password creator',
 	'modal.permutations' => 'About <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers" target="_blank"></a> possibilities',
 
