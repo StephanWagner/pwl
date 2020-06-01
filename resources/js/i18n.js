@@ -9,6 +9,10 @@ app.locale = {
     en: 'Network error',
     de: 'Netzwerk Fehler'
   },
+  successMessageItemDeleted: {
+    en: 'Item deleted',
+    de: 'Passwort gelöscht'
+  },
   // Success
   successMessagePasswordCopied: {
     en: 'Password copied to clipboard',

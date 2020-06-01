@@ -18,3 +18,4 @@ Route::get('/logout', 'AppController@logout');
 
 Route::post('/loginRequest', 'AppController@loginRequest');
 Route::post('/save', 'AppController@save');
+Route::post('/delete', 'AppController@delete');

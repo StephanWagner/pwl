@@ -10,8 +10,8 @@
 			</div>
 		</div>
 		<div class="modal-delete__footer">
-			<div class="modal-delete__button modal-delete__button--cancel button">{{ __('txt.modal.delete.button.cancel') }}</div>
-			<div class="modal-delete__button modal-delete__button--submit button">{{ __('txt.modal.delete.button.submit') }}</div>
+			<button class="modal-delete__button modal-delete__button--cancel button">{{ __('txt.modal.delete.button.cancel') }}</button>
+			<button class="modal-delete__button modal-delete__button--submit button">{{ __('txt.modal.delete.button.submit') }}</button>
 		</div>
 	</div>
 </div>

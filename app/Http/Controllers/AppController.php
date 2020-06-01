@@ -99,4 +99,23 @@ class AppController extends Controller
 			'success' => true
 		]);
 	}
+
+	function delete(Request $request) {
+
+		// Abort if not logged in
+		if (!Auth::check()) {
+			return response()->json([
+				'error' => __('txt.save.error.auth')
+			]);
+		}
+
+		$id = $request->get('id');
+		$record = Passwords::find($id);
+		$record->delete();
+
+		return response()->json([
+			'id' => $id,
+			'success' => true
+		]);
+	}
 }
