@@ -30,8 +30,6 @@ $(document).ready(function () {
   // Modal options
   var defaultModalOptions = {
     addClass: 'modal-vaulty',
-    width: 620,
-    height: 560,
     adjustDistance: 16,
     closeButton: 'title',
     getTitle: 'data-title'
@@ -42,6 +40,8 @@ $(document).ready(function () {
     addClass: 'modal-vaulty modal-vaulty--edit',
     attach: '[data-modal="edit"]',
     content: $('.modal-content--edit'),
+    width: 620,
+    height: 560,
     isolateScroll: false,
     onOpen: function () {
       if (!this.titleInitialized) {
@@ -89,6 +89,8 @@ $(document).ready(function () {
     addClass: 'modal-vaulty modal-vaulty--passwords',
     attach: '[data-modal="passwords"]',
     content: $('.modal-content--passwords'),
+    width: 620,
+    height: 560,
     onOpen: function () {
       if (!this.titleInitialized) {
         updateModalCloseIcon(this.titleContainer);
