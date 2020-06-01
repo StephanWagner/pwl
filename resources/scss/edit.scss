@@ -48,4 +48,29 @@
   &__button {
     width: 100%;
   }
+
+  &__textarea-options {
+    display: flex;
+    margin-bottom: 2px;
+  }
+
+  &__textarea-option {
+    color: #ccc;
+    transition: color .2s;
+
+    .enabled & {
+      color: unset;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__textarea-option-icon {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+  }
 }

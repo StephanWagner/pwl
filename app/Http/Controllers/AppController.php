@@ -62,7 +62,9 @@ class AppController extends Controller
 
 		$id = $request->get('id');
 		$title = trim($request->get('title'));
+		$title = strip_tags($title);
 		$content = trim($request->get('content'));
+		$content = strip_tags($content, ['<b>', '<u>', '<i>', '<s>', '<a>']);
 
 		if (empty($title)) {
 			return response()->json([
@@ -92,6 +94,8 @@ class AppController extends Controller
 
 		return response()->json([
 			'id' => $id,
+			'title' => $title,
+			'content' => $content,
 			'success' => true
 		]);
 	}

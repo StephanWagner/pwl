@@ -61,3 +61,36 @@ function error(txt) {
 function success(txt) {
   message('green', txt)
 }
+
+// Add textarea options
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement
+function insertMetachars(tag) {
+  if (!$('.edit__textarea-options').hasClass('enabled')) {
+    return false;
+  }
+
+  var sStartTag;
+  var sEndTag;
+  var oMsgInput = $('.edit__content-input')[0];
+  var nSelStart = oMsgInput.selectionStart;
+  var nSelEnd = oMsgInput.selectionEnd;
+  var sOldText = oMsgInput.value;
+  var selected = sOldText.substring(nSelStart, nSelEnd);
+  switch (tag) {
+    case 'b':
+    case 'i':
+    case 'u':
+    case 's':
+      sStartTag = '<' + tag+ '>';
+      sEndTag = '</' + tag+ '>';
+      break;
+    case 'a':
+      sStartTag = '<a href="' + selected + '" target="_blank">';
+      sEndTag = '</a>';
+      break;
+  }
+  var bDouble = sStartTag && sEndTag;
+  oMsgInput.value = sOldText.substring(0, nSelStart) + (bDouble ? sStartTag + selected + sEndTag : sStartTag) + sOldText.substring(nSelEnd);
+  oMsgInput.setSelectionRange(bDouble || nSelStart === nSelEnd ? nSelStart + sStartTag.length : nSelStart, (bDouble ? nSelEnd : nSelStart) + sStartTag.length);
+  oMsgInput.focus();
+}

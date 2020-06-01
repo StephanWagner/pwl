@@ -52,9 +52,12 @@ function save() {
         $('.edit__id-input').val(response.id);
         success('Data was saved'); // TODO Translate
 
+        $('.edit__title-input').val(response.title);
+        $('.edit__content-input').val(response.content);
+
         if ($('.passwords__item-wrapper[data-id="' + response.id + '"]')) {
-          $('[data-password-title="' + id + '"]').html(title);
-          $('[data-password-content="' + id + '"]').html(content);
+          $('[data-password-title="' + id + '"]').html(response.title);
+          $('[data-password-content="' + id + '"]').html(response.content);
         } else {
           // TODO
         }

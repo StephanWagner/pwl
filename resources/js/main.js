@@ -17,6 +17,16 @@ var app = {
 
 $(document).ready(function () {
 
+  // Textarea focus
+  $('.edit__content-input').on('focus', function () {
+    app.editTextareaBlurTimeout && clearTimeout(app.editTextareaBlurTimeout);
+    $('.edit__textarea-options').addClass('enabled');
+  }).on('blur', function () {
+    app.editTextareaBlurTimeout = setTimeout(function () {
+      $('.edit__textarea-options').removeClass('enabled');
+    }, 200);
+  });
+
   // Modal options
   var defaultModalOptions = {
     addClass: 'modal-vaulty',
