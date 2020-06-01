@@ -30,6 +30,11 @@
 		@endforeach
 	</div>
 
+	<div class="passwords__none-created{{ sizeof($passwords) <= 0 ? ' active' : '' }}">
+		{{ __('txt.content.noPasswordsCreated') }}
+		<button class="button" data-modal="edit" data-id="new" data-title="{{ __('txt.modal.add.title') }}">{{ __('txt.content.noPasswordsCreatedButton') }}</button>
+	</div>
+
 	<div class="passwords__none-found">
 		{{ __('txt.content.noPasswordsFound') }}
 	</div>

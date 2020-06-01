@@ -25,10 +25,15 @@ $(document).ready(function () {
       }
 
       $('.passwords__none-found').removeClass('active');
-      if (!$('.passwords__item-wrapper:not(.search-filtered)').length) {
-        $('.passwords__none-found').addClass('active');
-      }
     });
+    checkFilteredItems();
   });
 
 });
+
+function checkFilteredItems() {
+  $('.passwords__none-found').removeClass('active');
+  if ($('.search__textfield').val().trim() && !$('.passwords__item-wrapper:not(.search-filtered)').length) {
+    $('.passwords__none-found').addClass('active');
+  }
+}

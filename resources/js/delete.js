@@ -23,6 +23,10 @@ function deleteItem(id) {
       if (response.success && response.id) {
         success(__('successMessageItemDeleted'));
         $('.passwords__item-wrapper[data-id="' + response.id + '"]').remove();
+        checkFilteredItems();
+        if (!$('.passwords__item-wrapper').length) {
+          $('.passwords__none-created').addClass('active');
+        }
         app.deleteModal.close();
         return;
       }

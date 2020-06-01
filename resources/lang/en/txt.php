@@ -35,4 +35,6 @@ return [
 
 	// Content
 	'content.noPasswordsFound' => 'Nothing found...',
+	'content.noPasswordsCreated' => 'No passwords added yet...',
+	'content.noPasswordsCreatedButton' => 'Add first password'
 ];

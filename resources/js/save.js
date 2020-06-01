@@ -49,6 +49,8 @@ function save() {
       }
 
       if (response.success && response.id) {
+        $('.passwords__none-created').removeClass('active');
+
         $('.edit__id-input').val(response.id);
         success(__('successMessageDataSaved'));
 
