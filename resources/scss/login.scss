@@ -1,3 +1,12 @@
+.user-headline {
+  font-size: 29px;
+  line-height: 1.4;
+  padding: 64px 0 32px;
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+}
+
 .login {
   &__wrapper {
     position: absolute;
@@ -5,9 +14,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: -48px;
+    width: 260px;
 
     .button {
       width: 100%;
+    }
+
+    &--user {
+      position: static;
+      transform: none;
+      margin: 0;
+      width: 320px;
+      margin: auto;
     }
   }
 
@@ -24,12 +42,20 @@
 
   &__textfield {
     .textfield {
-      width: 260px;
+      width: 100%;
     }
 
-    &--username {
+    &--username,
+    &--name,
+    &--email {
       margin-bottom: 16px;
     }
+  }
+
+  &__textfield-label {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 0 4px 26px;
   }
 
   &__checkbox-wrapper {

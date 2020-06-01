@@ -28,7 +28,7 @@
 				<div class="login__checkbox-label">{{ __('txt.login.remember') }}</div>
 			</div>
 			<div class="login__button">
-				<button class="button" type="submit">{{ __('txt.login.button') }}</button>
+				<button class="button" type="submit">{{ __('txt.login.button.signIn') }}</button>
 			</div>
 		</div>
 	</div>

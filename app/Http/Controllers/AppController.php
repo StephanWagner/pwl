@@ -6,11 +6,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 use App\Passwords;
+use App\Users;
 use Auth;
+use Hash;
 
 class AppController extends Controller
 {
     function index() {
+		$admin = Users::where('username', 'admin')->first();
+
+		if (Hash::check('admin', $admin->password)) {
+			return view('user', [
+				'admin' => $admin
+			]);
+		}
+
 		if (Auth::check()) {
 			$passwords = Passwords::orderBy('title', 'asc')->get();
 

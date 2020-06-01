@@ -5,7 +5,8 @@ return [
 	'login.remember' => 'Remember me',
 	'login.username' => 'Username',
 	'login.password' => 'Password',
-	'login.button' => 'Sign in',
+	'login.button.signIn' => 'Sign in',
+	'login.button.saveAndSignIn' => 'Save and Sign in',
 	'login.error' => 'Wrong login details',
 
 	// Logout
