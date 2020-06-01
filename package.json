@@ -1,7 +1,7 @@
 {
   "name": "vaulty",
   "description": "A simple tool to save your passwords",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha",
   "private": false,
   "keywords": [],
   "repository": {
