@@ -31,5 +31,8 @@ return [
 	// Saving
 	'save.error.auth' => 'Please sign in to save data',
 	'save.error.title' => 'Please fill in the title',
-	'save.error.content' => 'Please fill in the content'
+	'save.error.content' => 'Please fill in the content',
+
+	// Content
+	'content.noPasswordsFound' => 'Nothing found...',
 ];

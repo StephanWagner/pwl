@@ -29,4 +29,8 @@
 
 		@endforeach
 	</div>
+
+	<div class="passwords__none-found">
+		{{ __('txt.content.noPasswordsFound') }}
+	</div>
 </div>

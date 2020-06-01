@@ -24,6 +24,11 @@ $(document).ready(function () {
       } else {
         item.addClass('search-filtered');
       }
+
+      $('.passwords__none-found').removeClass('active');
+      if (!$('.passwords__item-wrapper:not(.search-filtered)').length) {
+        $('.passwords__none-found').addClass('active');
+      }
     });
   });
 
