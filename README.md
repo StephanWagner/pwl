@@ -2,6 +2,15 @@
 
 ---
 
+## Install
+
+- Update database info in `.env`
+- Run `php artisan key:generate` to generate an encrypt key
+- Run `php artisan migrate` to migrate database
+- Change password for user admin
+
+---
+
 ## Assets
 
 This project uses Gulp. More info at https://gulpjs.com
@@ -19,9 +28,3 @@ Build assest for production:
 gulp build
 npm run build
 ```
-
----
-
-Install
-
-- Use `php artisan key:generate` to generate a key
