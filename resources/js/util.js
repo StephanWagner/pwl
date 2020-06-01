@@ -55,7 +55,7 @@ function message(color, txt) {
 }
 
 function error(txt) {
-  message('red', txt || 'Oops, an error occured!'); // TODO translate
+  message('red', txt || __('errorMessageUnknown'));
 }
 
 function success(txt) {

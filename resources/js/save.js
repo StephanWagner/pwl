@@ -50,7 +50,7 @@ function save() {
 
       if (response.success && response.id) {
         $('.edit__id-input').val(response.id);
-        success('Data was saved'); // TODO Translate
+        success(__('successMessageDataSaved'));
 
         $('.edit__title-input').val(response.title);
         $('.edit__content-input').val(response.content);
@@ -59,7 +59,7 @@ function save() {
           $('[data-password-title="' + id + '"]').html(response.title);
           $('[data-password-content="' + id + '"]').html(response.content);
         } else {
-          // TODO
+          // TODO add element to top
         }
         return;
       }
@@ -74,5 +74,5 @@ function save() {
 
 // Ajax error
 function ajaxError() {
-  error('Notwork error'); // TODO translate
+  error(__('errorMessageNetwork'));
 }

@@ -32,7 +32,8 @@ var scripts = [{
     './resources/js/main.js',
     './resources/js/save.js',
     './resources/js/search.js',
-    './resources/js/password-list.js'
+    './resources/js/password-list.js',
+    './resources/js/i18n.js'
   ],
   dest: './public/js/'
 }];

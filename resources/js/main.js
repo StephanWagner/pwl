@@ -175,7 +175,7 @@ function copyPassword(wrapper) {
       x: 'right',
       y: 'bottom'
     },
-    content: 'Password copied to clipboard' // TODO translate
+    content: __('successMessagePasswordCopied')
   });
 }
 
@@ -222,7 +222,7 @@ function getRandomPassword() {
 
 // Get password settings
 function getPasswordSettings() {
-  return app.defaultRandomPasswordSettings; // TODO
+  return app.defaultRandomPasswordSettings;
 }
 
 // Get the characters usable for the password
