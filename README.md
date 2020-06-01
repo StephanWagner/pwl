@@ -4,10 +4,31 @@
 
 ## Install
 
-- Update database info in `.env`
-- Run `php artisan key:generate` to generate an encrypt key
-- Run `php artisan migrate` to migrate database
-- Change password for user admin
+### Update database info
+
+Create a database with charset `utf8mb4` and update config information in `.env` file.
+
+### Migrate database
+
+Run `php artisan migrate` to migrate initial tables.
+
+```bash
+php artisan migrate
+```
+
+### Build assets
+
+This project uses gulp. See morer in section "Assets".
+
+To build the CSS and JS files, run `npm install` and then `npm run build`.
+
+```bash
+npm install && npm run build
+```
+
+### Set master password
+
+Open vaulty in a browser, you will be prompted to change the default password.
 
 ---
 
