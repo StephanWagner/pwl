@@ -18,7 +18,7 @@ php artisan migrate
 
 ### Build assets
 
-This project uses gulp. See morer in section "Assets".
+This project uses Gulp. See more in section "Assets".
 
 To build the CSS and JS files, run `npm install` and then `npm run build`.
 
