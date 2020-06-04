@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>vaulty</title>
+<title>Vaulty</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="author" content="Stephan Wagner, stephanwagner.me@gmail.com, https://stephanwagner.me">
 <meta name="description" content="">
 <link rel="icon" type="image/png" href="/img/favicon.png">
-<link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" href="/img/favicon.png">
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
