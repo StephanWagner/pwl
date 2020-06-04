@@ -16,7 +16,6 @@ function saveUser() {
   var setup = $('.user__setup-input').val();
 
   // Abort if no data
-  var error = false;
   if (
     !username ||
     !name ||

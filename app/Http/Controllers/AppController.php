@@ -48,6 +48,9 @@ class AppController extends Controller {
 
 	// Request: edit user
 	function saveUserRequest(Request $request) {
+		if (!$request->ajax()) {
+			return response('Forbidden', 403);
+		}
 
 		// Allow saving when we are setting up first user
 		$userSetup = !Users::first() && !Passwords::first();
@@ -124,6 +127,9 @@ class AppController extends Controller {
 
 	// Request: login
 	function loginRequest(Request $request) {
+		if (!$request->ajax()) {
+			return response('Forbidden', 403);
+		}
 
 		$user_data = [
 			'username' => $request->get('username'),
@@ -133,11 +139,11 @@ class AppController extends Controller {
 		$remember = $request->get('remember');
 
 		if (Auth::attempt($user_data, $remember == '1')) {
-			return redirect('/');
+			return response()->json([
+				'success' => true
+			]);
 		} else {
-			return back()->with('data', [
-				'username' => $request->get('username'),
-				'remember' => $request->get('remember'),
+			return response()->json([
 				'error' => __('txt.login.error')
 			]);
 		}
@@ -145,11 +151,18 @@ class AppController extends Controller {
 
 	// Request: Change language
 	function changeLocaleRequest() {
+		if (!$request->ajax()) {
+			return response('Forbidden', 403);
+		}
+
 		App::setLocale('de');
 	}
 
 	// Request: save data
 	function save(Request $request) {
+		if (!$request->ajax()) {
+			return response('Forbidden', 403);
+		}
 
 		// Abort if not logged in
 		if (!Auth::check()) {
@@ -200,6 +213,9 @@ class AppController extends Controller {
 
 	// Request: delete date
 	function delete(Request $request) {
+		if (!$request->ajax()) {
+			return response('Forbidden', 403);
+		}
 
 		// Abort if not logged in
 		if (!Auth::check()) {

@@ -8,14 +8,14 @@
 	@endif
 </h2>
 
-<input id="login-remember" type="hidden" name="remember" value="">
-
 <div class="user__wrapper">
 
 	{{ csrf_field() }}
 
 	<input type="hidden" class="user__id-input" value="{{ !empty($user['id']) ? $user['id'] : '' }}">
 	<input type="hidden" class="user__setup-input" value="{{ !empty($setup) ? '1' : '' }}">
+
+	<input id="login-remember" type="hidden" name="remember" value="">
 
 	<div class="user__container">
 
@@ -44,7 +44,7 @@
 		</div>
 		@endif
 		<div class="user__button">
-			<button class="button user__button-input" type="submit">
+			<button class="button user__button-input">
 				@if ($setup)
 					{{ __('txt.user.button.saveAndSignIn') }}
 				@else
