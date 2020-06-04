@@ -24,13 +24,10 @@ return [
 	'saveUser.error.name' => 'Please fill in the display name',
 	'saveUser.error.email' => 'Please fill in the email address',
 	'saveUser.error.password' => 'Please fill in the password',
-	'saveUser.error.passwordLength' => 'The password needs to be at least six characters long',
+	'saveUser.error.passwordLength' => 'The password needs to be at least 6 characters long',
 
 	// Logout
 	'logout' => 'Sign Out',
-
-	// Filter
-	'filter.button' => 'Filter',
 
 	// Search
 	'search.placeholder' => 'Search...',
@@ -47,12 +44,12 @@ return [
 	'modal.permutations' => 'About <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers" target="_blank"></a> possibilities',
 
 	// Saving Passwords
-	'save.error.auth' => 'Please sign in to save data',
+	'save.error.auth' => 'Please sign in to save',
 	'save.error.title' => 'Please fill in the title',
 	'save.error.content' => 'Please fill in the content',
 
 	// Content
 	'content.noPasswordsFound' => 'Nothing found...',
-	'content.noPasswordsCreated' => 'No passwords added yet...',
-	'content.noPasswordsCreatedButton' => 'Add first password'
+	'content.noPasswordsCreated' => 'No entries added yet...',
+	'content.noPasswordsCreatedButton' => 'Add first entry'
 ];
