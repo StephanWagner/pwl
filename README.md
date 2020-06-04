@@ -4,6 +4,12 @@
 
 ## Install
 
+### Install with composer
+
+```bash
+composer create-project stephanwagner/vaulty vaulty --prefer-dist
+```
+
 ### Update database info
 
 Create a database with charset `utf8mb4` and update config information in `.env` file.
