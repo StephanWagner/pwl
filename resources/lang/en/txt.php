@@ -6,8 +6,12 @@ return [
 	'login.username' => 'Username',
 	'login.password' => 'Password',
 	'login.button.signIn' => 'Sign in',
-	'login.button.saveAndSignIn' => 'Save and Sign in',
 	'login.error' => 'Wrong login details',
+
+	// User
+	'user.setup.headline' => 'Setting up the admin user...',
+	'user.button.saveAndSignIn' => 'Save and Sign in',
+
 
 	// Logout
 	'logout' => 'Sign Out',

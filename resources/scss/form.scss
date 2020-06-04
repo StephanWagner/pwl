@@ -1,3 +1,5 @@
+// Textfields
+
 .textfield {
   border: 2px solid $grayBorder;
   padding: 8px 24px;
@@ -14,6 +16,59 @@
     border-color: $primaryColor;
   }
 }
+
+.textfield-label {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 0 4px 26px;
+}
+
+// Checkboxes
+
+.checkbox-wrapper {
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+    .checkbox {
+      color: $primaryColor;
+      border-color: $primaryColor;
+    }
+
+    &__checkbox {
+      color: $primaryColor;
+    }
+  }
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  align-self: center;
+  line-height: 16px;
+  border: 2px solid $grayBorder;
+  background: #fff;
+  transition: color .2s;
+  color: $grayBorder;
+  margin: 0 12px 0 0;
+  transition: border-color .2s, color .2s;
+}
+
+.checkbox-icon {
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 18px;
+  text-align: center;
+  display: none;
+  color: $defaultTextColor;
+
+  .active & {
+    display: block;
+  }
+}
+
+// Buttons
 
 .button {
   cursor: pointer;

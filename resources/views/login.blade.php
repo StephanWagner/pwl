@@ -23,9 +23,9 @@
 			<div class="login__textfield login__textfield--password">
 				<input class="textfield" type="password" name="password" placeholder="{{ __('txt.login.password') }}">
 			</div>
-			<div class="login__checkbox-wrapper{{ Session::get('data.remember') ? ' active' : '' }}" onclick="toggleRememberLogin()">
-				<div class="login__checkbox"><span class="login__checkbox-icon material-icons-sharp">check</span></div>
-				<div class="login__checkbox-label">{{ __('txt.login.remember') }}</div>
+			<div class="login__checkbox-wrapper checkbox-wrapper{{ Session::get('data.remember') ? ' active' : '' }}" onclick="toggleRememberLogin()">
+				<div class="checkbox"><span class="checkbox-icon material-icons-sharp">check</span></div>
+				<div class="checkbox-label">{{ __('txt.login.remember') }}</div>
 			</div>
 			<div class="login__button">
 				<button class="button" type="submit">{{ __('txt.login.button.signIn') }}</button>

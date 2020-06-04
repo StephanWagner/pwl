@@ -1,12 +1,3 @@
-.user-headline {
-  font-size: 29px;
-  line-height: 1.4;
-  padding: 64px 0 32px;
-  margin: 0;
-  text-align: center;
-  font-weight: normal;
-}
-
 .login {
   &__wrapper {
     position: absolute;
@@ -18,14 +9,6 @@
 
     .button {
       width: 100%;
-    }
-
-    &--user {
-      position: static;
-      transform: none;
-      margin: 0;
-      width: 320px;
-      margin: auto;
     }
   }
 
@@ -45,60 +28,12 @@
       width: 100%;
     }
 
-    &--username,
-    &--name,
-    &--email {
+    &--username {
       margin-bottom: 16px;
     }
   }
 
-  &__textfield-label {
-    font-size: 15px;
-    font-weight: 600;
-    padding: 0 0 4px 26px;
-  }
-
   &__checkbox-wrapper {
     margin: 16px 0;
-    display: flex;
-    cursor: pointer;
-
-    &:hover {
-      .login__checkbox {
-        color: $primaryColor;
-        border-color: $primaryColor;
-      }
-
-      &__checkbox {
-        color: $primaryColor;
-      }
-    }
-  }
-
-  &__checkbox {
-    width: 22px;
-    height: 22px;
-    align-self: center;
-    line-height: 16px;
-    border: 2px solid $grayBorder;
-    background: #fff;
-    transition: color .2s;
-    color: $grayBorder;
-    margin: 0 12px 0 0;
-    transition: border-color .2s, color .2s;
-  }
-
-  &__checkbox-icon {
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
-    font-size: 18px;
-    text-align: center;
-    display: none;
-    color: $defaultTextColor;
-
-    .active & {
-      display: block;
-    }
   }
 }

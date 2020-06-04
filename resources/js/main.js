@@ -147,7 +147,7 @@ function toggleRememberLogin() {
   var remember = $('#login-remember').val() === '1';
   remember = !remember;
   $('#login-remember').val(remember ? '1' : '0')
-  $('.login__checkbox-wrapper')[remember ? 'addClass' : 'removeClass']('active');
+  $('.checkbox-wrapper')[remember ? 'addClass' : 'removeClass']('active');
 }
 
 // Update jBox close icon
