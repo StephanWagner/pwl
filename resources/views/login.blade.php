@@ -2,8 +2,6 @@
 
 <div class="login__wrapper">
 
-	{{ csrf_field() }}
-
 	<input id="login-remember" type="hidden" name="remember" value="">
 
 	<div class="login__container">

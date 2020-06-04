@@ -10,8 +10,6 @@
 
 <div class="user__wrapper">
 
-	{{ csrf_field() }}
-
 	<input type="hidden" class="user__id-input" value="{{ !empty($user['id']) ? $user['id'] : '' }}">
 	<input type="hidden" class="user__setup-input" value="{{ !empty($setup) ? '1' : '' }}">
 

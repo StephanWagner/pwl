@@ -6,7 +6,7 @@ function deleteItem(id) {
       id: id
     },
     headers: {
-      'X-CSRF-TOKEN': $('.modal-content--edit [name="_token"]').val()
+      'X-CSRF-TOKEN': $('.csrf-token [name="_token"]').val()
     },
     beforeSend: function () {
       $('.modal-delete__button--submit').attr('disabled', 'disabled').addClass('loading-bar');

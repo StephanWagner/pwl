@@ -32,7 +32,7 @@ function save() {
       content: content
     },
     headers: {
-      'X-CSRF-TOKEN': $('.modal-content--edit [name="_token"]').val()
+      'X-CSRF-TOKEN': $('.csrf-token [name="_token"]').val()
     },
     beforeSend: function () {
       $('.edit-textfield').attr('disabled', 'disabled');

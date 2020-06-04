@@ -36,3 +36,36 @@ function __(id, rep, lang) {
   });
   return str;
 }
+
+// Change language
+function setLocale(locale) {
+  if (app.changeLocaleRequestRunning) {
+    return false;
+  }
+
+  app.changeLocaleRequestRunning = true;
+
+  $.ajax({
+    url: '/changeLocaleRequest',
+    method: 'post',
+    data: {
+      locale: locale
+    },
+    headers: {
+      'X-CSRF-TOKEN': $('.csrf-token [name="_token"]').val()
+    },
+    complete: function () {
+      app.changeLocaleRequestRunning = false;
+    },
+    success: function (response) {
+      if (response && response.success) {
+        window.location.reload();
+        return;
+      }
+      error();
+    },
+    error: function () {
+      ajaxError();
+    }
+  });
+}

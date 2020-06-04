@@ -23,3 +23,9 @@ Route::post('/loginRequest', 'AppController@loginRequest');
 Route::post('/saveUserRequest', 'AppController@saveUserRequest');
 Route::post('/saveRequest', 'AppController@save');
 Route::post('/deleteRequest', 'AppController@delete');
+Route::post('/changeLocaleRequest', 'AppController@changeLocaleRequest');
+
+// Set language
+if (Request::hasCookie('locale')){
+	App::setLocale(Crypt::decrypt(Cookie::get('locale'), false));
+}

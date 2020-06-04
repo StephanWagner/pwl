@@ -34,7 +34,7 @@ function login() {
       password: password
     },
     headers: {
-      'X-CSRF-TOKEN': $('.login__wrapper [name="_token"]').val()
+      'X-CSRF-TOKEN': $('.csrf-token [name="_token"]').val()
     },
     beforeSend: function () {
       $('.login__error').html('&nbsp;');

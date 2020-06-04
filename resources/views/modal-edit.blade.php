@@ -1,7 +1,5 @@
 <div class="modal-content modal-content--edit">
 
-	{{ csrf_field() }}
-
 	<input type="hidden" class="edit__id-input" value="">
 
 	<div class="edit__wrapper">

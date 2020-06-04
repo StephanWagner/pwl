@@ -2,7 +2,7 @@
 
 return [
 	// Login
-	'login.remember' => 'Angmeldet bleiben',
+	'login.remember' => 'Angemeldet bleiben',
 	'login.username' => 'Benutzername',
 	'login.password' => 'Passwort',
 	'login.button.signIn' => 'Anmelden',

@@ -49,7 +49,7 @@ function saveUser() {
       password: password
     },
     headers: {
-      'X-CSRF-TOKEN': $('.user__wrapper [name="_token"]').val()
+      'X-CSRF-TOKEN': $('.csrf-token [name="_token"]').val()
     },
     beforeSend: function () {
       $('.user__error').removeClass('active').html();

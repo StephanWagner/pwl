@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 use App\Passwords;
 use App\Users;
+use Cookie;
 use Auth;
 use Hash;
 
@@ -150,12 +151,18 @@ class AppController extends Controller {
 	}
 
 	// Request: Change language
-	function changeLocaleRequest() {
+	function changeLocaleRequest(Request $request) {
 		if (!$request->ajax()) {
 			return response('Forbidden', 403);
 		}
 
-		App::setLocale('de');
+		$locale = $request->get('locale');
+
+		// TODO check if language is available
+
+		return response()->json([
+			'success' => true
+		])->withCookie(cookie()->forever('locale', $locale));
 	}
 
 	// Request: save data
