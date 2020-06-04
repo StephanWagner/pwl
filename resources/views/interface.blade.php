@@ -11,7 +11,7 @@
 
 		<div class="search__wrapper">
 			<div class="search__container">
-				<input class="search__textfield" type="text" placeholder="{{ __('txt.search.placeholder') }}">
+				<input class="search__textfield"{{ $passwords->isEmpty() ? ' disabled="disabled"' : '' }} type="text" placeholder="{{ __('txt.search.placeholder') }}">
 			</div>
 		</div>
 

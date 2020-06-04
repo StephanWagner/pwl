@@ -36,7 +36,7 @@ $(document).ready(function () {
   };
 
   // Edit modal
-  new jBox('Modal', $.extend(defaultModalOptions, {
+  app.editModal = new jBox('Modal', $.extend(defaultModalOptions, {
     addClass: 'modal-vaulty modal-vaulty--edit',
     attach: '[data-modal="edit"]',
     content: $('.modal-content--edit'),

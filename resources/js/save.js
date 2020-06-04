@@ -57,12 +57,14 @@ function save() {
         $('.edit__title-input').val(response.title);
         $('.edit__content-input').val(response.content);
 
-        if ($('.passwords__item-wrapper[data-id="' + response.id + '"]')) {
+        if ($('.passwords__item-wrapper[data-id="' + response.id + '"]').length) {
           $('[data-password-title="' + id + '"]').html(response.title);
           $('[data-password-content="' + id + '"]').html(response.content);
         } else {
+          $('.search__textfield').removeAttr('disabled');
           // TODO add element to top
         }
+        app.editModal.close();
         return;
       }
 
