@@ -26,9 +26,9 @@ To build the CSS and JS files, run `npm install` and then `npm run build`.
 npm install && npm run build
 ```
 
-### Set master password
+### Create admin user
 
-Open vaulty in a browser, you will be prompted to change the default password.
+Open vaulty in a browser, you will be prompted to create the admin user.
 
 ---
 
