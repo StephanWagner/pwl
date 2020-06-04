@@ -21,5 +21,5 @@ Route::get('/logout', 'AppController@logout');
 // Requests
 Route::post('/loginRequest', 'AppController@loginRequest');
 Route::post('/saveUserRequest', 'AppController@saveUserRequest');
-Route::post('/save', 'AppController@save'); // TODO rename
-Route::post('/delete', 'AppController@delete'); // TODO rename
+Route::post('/saveRequest', 'AppController@save');
+Route::post('/deleteRequest', 'AppController@delete');

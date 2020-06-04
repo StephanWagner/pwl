@@ -24,7 +24,7 @@ function save() {
   }
 
   $.ajax({
-    url: '/save',
+    url: '/saveRequest',
     method: 'post',
     data: {
       id: id,
@@ -61,10 +61,11 @@ function save() {
           $('[data-password-title="' + id + '"]').html(response.title);
           $('[data-password-content="' + id + '"]').html(response.content);
         } else {
+          app.editModal.close();
           $('.search__textfield').removeAttr('disabled');
           // TODO add element to top
         }
-        app.editModal.close();
+
         return;
       }
 
