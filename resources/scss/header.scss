@@ -22,14 +22,28 @@ $headerHeight: 56px;
     }
   }
 
-  &__name {
+  &__spacer {
     flex: 1;
+  }
+
+  &__name {
+    height: $headerHeight;
+    line-height: $headerHeight;
     align-self: center;
-    padding: 0 16px 0 32px;
+    padding: 0 16px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: right;
+    color: #fff;
+    transition: background-color .2s;
+
+    &.active,
+    &:hover {
+      color: #fff;
+      background: $headerButtonHighlight;
+      text-decoration: none;
+    }
   }
 }
 

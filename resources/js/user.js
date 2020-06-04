@@ -13,13 +13,15 @@ function saveUser() {
   var name = $('.user__name-input').val().trim();
   var email = $('.user__email-input').val().trim();
   var password = $('.user__password-input').val();
+  var setup = $('.user__setup-input').val();
 
   // Abort if no data
+  var error = false;
   if (
     !username ||
     !name ||
     !email ||
-    !password
+    (setup && !password)
   ) {
     if (!username) {
       $('.user__username-input').addClass('error');
@@ -34,7 +36,7 @@ function saveUser() {
       $('.user__password-input').addClass('error');
     }
     animateEl($('.user__button-input'), 'shake');
-    //return false;
+    return false;
   }
 
   $.ajax({
@@ -73,7 +75,15 @@ function saveUser() {
       }
 
       if (response.success) {
-        window.location.href = '/';
+        // When setting up user go to home
+        if (response.setup) {
+          window.location.href = '/';
+          return;
+        }
+
+        // Otherwise show success notice
+        $('.header__name').html(name);
+        success(__('successMessageUserDataSaved'));
         return;
       }
 

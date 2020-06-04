@@ -9,7 +9,9 @@ return [
 	'login.error' => 'Wrong login details',
 
 	// User
+	'user.headline' => 'Edit user',
 	'user.setup.headline' => 'Setting up the admin user...',
+	'user.button.save' => 'Save',
 	'user.button.saveAndSignIn' => 'Save and Sign in',
 	'user.input.username' => 'Username',
 	'user.input.name' => 'Display name',

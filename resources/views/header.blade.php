@@ -22,12 +22,15 @@
 <header class="header__wrapper">
 	<div class="header__container container">
 		<div class="header__logo">
-			<img src="/img/logo.svg" alt="">
+			<a href="{{ url('/') }}">
+				<img src="/img/logo.svg" alt="">
+			</a>
 		</div>
 		@if (Auth::check())
-		<div class="header__name">
+		<div class="header__spacer"></div>
+		<a href="{{ url('/user') }}" class="header__name{{ request()->is('user') ? ' active' : '' }}">
 			{{ Auth::user()->name }}
-		</div>
+		</a>
 		<nav class="main-nav">
 			<ul>
 				<li class="main-nav__item main-nav__item--logout">

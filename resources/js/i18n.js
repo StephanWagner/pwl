@@ -21,6 +21,10 @@ app.locale = {
   successMessageDataSaved: {
     en: 'Data was saved',
     de: 'Daten gespeichert'
+  },
+  successMessageUserDataSaved: {
+    en: 'User data was saved',
+    de: 'Benutzerdaten gespeichert'
   }
 };
 

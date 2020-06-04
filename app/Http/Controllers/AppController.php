@@ -77,9 +77,9 @@ class AppController extends Controller {
 		if (empty($email)) {
 			$errors[] = __('txt.saveUser.error.email');
 		}
-		if (empty($password)) {
+		if ($userSetup && empty($password)) {
 			$errors[] = __('txt.saveUser.error.password');
-		} else if (strlen($password) < 6) {
+		} else if (($userSetup || !empty($password)) && strlen($password) < 6) {
 			$errors[] = __('txt.saveUser.error.passwordLength');
 		}
 
@@ -103,9 +103,10 @@ class AppController extends Controller {
 		$record->username = $username;
 		$record->name = $name;
 		$record->email = $email;
-		$record->password =  Hash::make($password);
+		if (!empty($password)) {
+			$record->password = Hash::make($password);
+		}
 		$record->save();
-		$id = $record->id;
 
 		if ($userSetup) {
 			$user_data = [
@@ -116,7 +117,8 @@ class AppController extends Controller {
 		}
 
 		return response()->json([
-			'success' => true
+			'success' => true,
+			'setup' => $userSetup
 		]);
 	}
 
