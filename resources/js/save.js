@@ -1,6 +1,6 @@
 // Domready
 $(document).ready(function () {
-  $('.edit-textfield').on('change input', function () {
+  $('.textfield').on('change input', function () {
     $(this).removeClass('error');
   });
 });

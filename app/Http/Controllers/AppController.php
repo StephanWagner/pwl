@@ -10,17 +10,16 @@ use App\Users;
 use Auth;
 use Hash;
 
-class AppController extends Controller
-{
-    function index() {
-		$admin = Users::where('username', 'admin')->first();
+class AppController extends Controller {
 
-		if (Hash::check('admin', $admin->password)) {
-			return view('user', [
-				'admin' => $admin
-			]);
+	// Main method
+    function index() {
+		// Redirect to user page
+		if (!Users::first() && !Passwords::first()) {
+			return redirect('/user');
 		}
 
+		// Show passwords when logged in
 		if (Auth::check()) {
 			$passwords = Passwords::orderBy('title', 'asc')->get();
 
@@ -29,14 +28,99 @@ class AppController extends Controller
 			]);
 		}
 
+		// Show login page when not logged in
 		return view('login');
 	}
 
+	// User page
+	function user() {
+		return view('user', [
+			'user' => Auth::user(),
+			'setup' => !Users::first() && !Passwords::first()
+		]);
+	}
+
+	// Logout and go to home
 	function logout() {
 		Auth::logout();
 		return redirect('/');
 	}
 
+	// Request: edit user
+	function saveUserRequest(Request $request) {
+
+		// Allow saving when we are setting up first user
+		$userSetup = !Users::first() && !Passwords::first();
+
+		// Abort if not logged in
+		if (!$userSetup && !Auth::check()) {
+			return response()->json([
+				'error' => __('txt.saveUser.error.auth')
+			]);
+		}
+
+		$id = $request->get('id');
+		$username = trim($request->get('username'));
+		$name = trim($request->get('name'));
+		$email = trim($request->get('email'));
+		$password = $request->get('password');
+		$remember = $request->get('remember');
+
+		$errors = [];
+
+		if (empty($username)) {
+			$errors[] = __('txt.saveUser.error.username');
+		}
+		if (empty($name)) {
+			$errors[] = __('txt.saveUser.error.name');
+		}
+		if (empty($email)) {
+			$errors[] = __('txt.saveUser.error.email');
+		}
+		if (empty($password)) {
+			$errors[] = __('txt.saveUser.error.password');
+		} else if (strlen($password) < 6) {
+			$errors[] = __('txt.saveUser.error.passwordLength');
+		}
+
+		// Abort if errors found
+		if (!empty($errors)) {
+			return response()->json([
+				'error' => true,
+				'errors' => $errors
+			]);
+		}
+
+		// Save data
+		if ($id) {
+			$record = Users::find($id);
+		}
+
+		if (!$id || !$record) {
+			$record = new Users();
+		}
+
+		$record->username = $username;
+		$record->name = $name;
+		$record->email = $email;
+		$record->password =  Hash::make($password);
+		$record->save();
+		$id = $record->id;
+
+		if ($userSetup) {
+			$user_data = [
+				'username' => $username,
+				'password' => $password
+			];
+			Auth::attempt($user_data, $remember == '1');
+		}
+
+		return response()->json([
+			'success' => true
+		]);
+	}
+
+	// Request: login
 	function loginRequest(Request $request) {
 
 		$user_data = [
@@ -57,10 +141,12 @@ class AppController extends Controller
 		}
 	}
 
+	// Request: Change language
 	function changeLocaleRequest() {
 		App::setLocale('de');
 	}
 
+	// Request: save data
 	function save(Request $request) {
 
 		// Abort if not logged in
@@ -110,6 +196,7 @@ class AppController extends Controller
 		]);
 	}
 
+	// Request: delete date
 	function delete(Request $request) {
 
 		// Abort if not logged in

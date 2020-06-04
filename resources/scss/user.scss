@@ -8,9 +8,25 @@
     font-weight: normal;
   }
 
+  &__error {
+    color: #f00;
+
+    > div {
+      margin: 0 0 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.active {
+      margin: -16px 0 32px;
+    }
+  }
+
   &__wrapper {
     width: 320px;
-    margin: auto;
+    margin: 16px auto 64px;
   }
 
   &__textfield {

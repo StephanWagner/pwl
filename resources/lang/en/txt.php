@@ -11,7 +11,18 @@ return [
 	// User
 	'user.setup.headline' => 'Setting up the admin user...',
 	'user.button.saveAndSignIn' => 'Save and Sign in',
+	'user.input.username' => 'Username',
+	'user.input.name' => 'Display name',
+	'user.input.email' => 'Email address',
+	'user.input.password' => 'Password',
 
+	// Saving User
+	'saveUser.error.auth' => 'Please sign in to save user data',
+	'saveUser.error.username' => 'Please fill in the username',
+	'saveUser.error.name' => 'Please fill in the display name',
+	'saveUser.error.email' => 'Please fill in the email address',
+	'saveUser.error.password' => 'Please fill in the password',
+	'saveUser.error.passwordLength' => 'The password needs to be at least six characters long',
 
 	// Logout
 	'logout' => 'Sign Out',
@@ -33,7 +44,7 @@ return [
 	'modal.passwords.title' => 'Password creator',
 	'modal.permutations' => 'About <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers" target="_blank"></a> possibilities',
 
-	// Saving
+	// Saving Passwords
 	'save.error.auth' => 'Please sign in to save data',
 	'save.error.title' => 'Please fill in the title',
 	'save.error.content' => 'Please fill in the content',

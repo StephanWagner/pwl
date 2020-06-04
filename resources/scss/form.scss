@@ -1,11 +1,26 @@
+// Placeholders
+
+::-webkit-input-placeholder {
+  color: $placeholderColor;
+}
+
+::-moz-placeholder {
+  color: $placeholderColor;
+}
+
+:-ms-input-placeholder {
+  color: $placeholderColor;
+}
+
 // Textfields
 
 .textfield {
   border: 2px solid $grayBorder;
-  padding: 8px 24px;
+  padding: 8px 16px;
   font-size: 17px;
   line-height: 32px;
-  transition: border-color .2s;
+  background: #fff;
+  transition: border-color .2s, background-color .2s;
 
   &.error {
     border-color: #f00;
@@ -15,12 +30,17 @@
   &.active {
     border-color: $primaryColor;
   }
+
+  &[disabled] {
+    color: #ccc;
+    border-color: $grayBorder;
+  }
 }
 
 .textfield-label {
   font-size: 15px;
   font-weight: 600;
-  padding: 0 0 4px 26px;
+  padding: 0 0 4px 18px;
 }
 
 // Checkboxes
