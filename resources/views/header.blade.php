@@ -19,12 +19,12 @@
 
 <div class="page__wrapper">
 
-@if (Auth::check())
 <header class="header__wrapper">
 	<div class="header__container container">
 		<div class="header__logo">
 			<img src="/img/logo.svg" alt="">
 		</div>
+		@if (Auth::check())
 		<div class="header__name">
 			{{ Auth::user()->name }}
 		</div>
@@ -35,10 +35,8 @@
 				</li>
 			</ul>
 		</nav>
+		@endif
 	</div>
 </header>
-@else
-<header class="header__logged-out"></header>
-@endif
 
 <main>

@@ -8,7 +8,7 @@
 
 	<div class="login__wrapper login__wrapper--user">
 
-		<h2 class="user-headline">Please set up your user</h2>
+		<h2 class="user-headline">Please set up the admin user</h2>
 
 		<div class="login__container">
 
